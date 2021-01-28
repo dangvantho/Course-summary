@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Events</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="events.css">
+</head>
+<body>
+    <div class="events">
+        <div class="text-header">
+            <h2>Events near Ha Noi, VN</h2>
+            <a href="#">See all </a>
+        </div>
+        <div class="content-events">
+            <div class="move-left">
+                <i class="fa fa-chevron-left chevron-left"></i>
+            </div>
+            <div class="event">
+                <img src="event-1.webp" alt="event-1">
+                <div class="text-content">
+                    <div class="time">Sat, Jan 30, 11:00 AM GMT+7</div>
+                    <div class="descrition">
+                        Funminton - Tennis Federation - Every Saturday 11:00 - 13:00
+                    </div>
+                    <div class="social">Hanoi Badminton</div>
+                    <div class="participants">
+                        <div class="avartar-3">
+                            <div class="avartar" style="background-image: url('per-1.webp');"></div>
+                            <div class="avartar" style="background-image: url('per-2.webp');"></div>
+                            <div class="avartar" style="background-image: url('per-3.webp');"></div>
+                        </div>
+                        <div class="count">35</div>
+                    </div>
+                </div>
+                
+            </div>
+            <div class="event">
+                <img src="event-2.webp" alt="event-1">
+                <div class="text-content">
+                    <div class="time">Sat, Jan 31, 8:30 AM GMT+7</div>
+                    <div class="descrition">
+                        RE-INVENT YOU: BUILD HABITS THAT MATTER
+                    </div>
+                    <div class="social">Public Speaking and Personal Development</div>
+                    <div class="participants">
+                        <div class="avartar mr-8" style="background-image: url('per-4.webp');"></div>
+                        <div class="count">1</div>
+                    </div>
+                </div>
+                
+            </div>
+            <div class="event">
+                <img src="event-3.webp" alt="event-1">
+                <div class="text-content">
+                    <div class="time">Sat, Jan 31, 9:45 AM GMT+7</div>
+                    <div class="descrition">
+                        Ha Noi  Sunday Free Online Guided Meditation- Beginners and Intermediate
+                    </div>
+                    <div class="social">Ha Noi Sahaja Yoga Meditation</div>
+                    <div class="participants">
+                        <div class="avartar-2">
+                            <div class="avartar" style="background-image: url('per-2.webp');"></div>
+                            <div class="avartar" style="background-image: url('per-5.webp');"></div>
+                        </div>
+                        <div class="count">2</div>
+                    </div>
+                </div>
+                
+            </div>
+            <div class="event">
+                <img src="event-4.webp" alt="event-1">
+                <div class="text-content">
+                    <div class="time">Sat, Jan 29, 6:00 PM GMT+7</div>
+                    <div class="descrition">
+                        Open Tech Talk - Become High Level Javascript Developer
+                    </div>
+                    <div class="social">Linagora Vietnam</div>
+                    <div class="participants">
+                        <div class="avartar-3">
+                            <div class="avartar" style="background-image: url('per-1.webp');"></div>
+                            <div class="avartar" style="background-image: url('per-2.webp');"></div>
+                            <div class="avartar" style="background-image: url('per-3.webp');"></div>
+                        </div>
+                        <div class="count">35</div>
+                    </div>
+                </div>    
+            </div>
+            <div class="event">
+                <img src="event-6.webp" alt="event-1">
+                <div class="text-content">
+                    <div class="time">Sat, Jan 30, 11:00 AM GMT+7</div>
+                    <div class="descrition">
+                        DIY jewelry
+                    </div>
+                    <div class="social">Ha Noi Arts and Crafts  Meetup</div>
+                    <div class="participants">
+                        <div class="avartar-3">
+                            <div class="avartar" style="background-image: url('per-1.webp');"></div>
+                            <div class="avartar" style="background-image: url('per-2.webp');"></div>
+                            <div class="avartar" style="background-image: url('per-3.webp');"></div>
+                        </div>
+                        <div class="count">35</div>
+                    </div>
+                </div>    
+            </div>
+            <div class="move-right">
+                <i class="fa fa-chevron-right chevron-right"></i>
+            </div>
+        </div>
+    </div>
+    <script>
+        var first=0;
+        var events=document.getElementsByClassName("event");
+        var chevronRight=document.getElementsByClassName("chevron-right")[0];
+        var chevronLeft=document.getElementsByClassName("chevron-left")[0];
+        state(first);
+        function state(first){
+            if(first==0) {
+                chevronLeft.style.display="none";
+            }
+            else chevronLeft.style.display="inline-block";
+            if(first==events.length-4) {
+                chevronRight.style.display="none";
+            }
+            else chevronRight.style.display="inline-block";
+            for(let i=0 ;i<events.length ;++i){
+                if(i==first) events[i].style.marginLeft="0";
+                else events[i].style.marginLeft="20px";
+                if((i<first) || (i>first+3)){
+                    events[i].style.display="none";    
+                }
+                else events[i].style.display="block";
+            }
+        }
+        chevronRight.addEventListener("click",()=>{
+            ++first;
+            state(first);
+        })
+        chevronLeft.addEventListener("click",()=>{
+            --first;
+            state(first);
+        })
+        
+    </script>
+</body>
+</html>

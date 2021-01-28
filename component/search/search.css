@@ -9,21 +9,28 @@
     box-shadow: 0 0 8px rgba(33,33,33,0.12);
 }
 .input{
-    position: relative;
     flex-basis:80%;
     margin-right: 20px;
     display: flex;
 }
-.input .even{
+.input .position-1{
+    position: relative;
     flex-basis: 300px;
-    line-height: 30px;
     flex-grow:1;
+}
+.input .even-key{
+    line-height: 30px;
+    width: 100%;
     padding:8px 16px 8px 32px;
     font-size: 14px;
     border:1px solid #A2A2A2;
     border-radius: 6px;
     border-bottom-right-radius:0 ;
     border-top-right-radius:0 ;
+}
+.input .position-2{
+    position: relative;
+    flex-basis: 300px;
 }
 .even-icon{
     position: absolute;
@@ -32,7 +39,8 @@
     line-height: 48px;
 }
 .input .search-location{
-    flex-basis: 300px;
+    
+    line-height: 30px;
     padding:8px 16px 8px 32px;
     border:1px solid #A2A2A2;
     border-radius: 6px;
@@ -43,7 +51,7 @@
 }
 .lo-icon{
     position: absolute;
-    right: 198px;
+    left: 10px;
     font-size: 16px;
     line-height: 48px;
 }
